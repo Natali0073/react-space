@@ -3,16 +3,16 @@ import {
   ADD_TECHNOLOGY, DELETE_TECHNOLOGY, PERSON_INFO_LOADED,
   TECHNOLOGIES_LOADED
 } from '../../constants/action-types';
-import {addTechnology, deleteTechnology, getPersonData, getTechnologies} from '../../redux/actions/index';
+import { addTechnology, deleteTechnology, getPersonData, getTechnologies } from '../../redux/actions/index';
 import fetchMock from 'fetch-mock';
 import expect from 'expect';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import rootReducer from '../../redux/reducers/index';
-import {homeData, technologiesListMock} from './home-mock';
-import Enzyme, {shallow, mount} from 'enzyme';
+import { homeData, technologiesListMock } from './home-mock';
+import Enzyme, { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {Home} from './Home';
+import { Home } from './Home';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -38,12 +38,12 @@ describe('actions', () => {
 
   beforeEach(() => {
     component = shallow(<Home
-        addTechnology={addTechnologyMock}
-        deleteTechnology={deleteTechnologyMock}
-        getPersonData={getPersonDataMock}
-        getTechnologies={getTechnologiesMock}
-        personInfo={personInfoMock}
-        technologiesList={technologiesMock}
+            addTechnology={addTechnologyMock}
+            deleteTechnology={deleteTechnologyMock}
+            getPersonData={getPersonDataMock}
+            getTechnologies={getTechnologiesMock}
+            personInfo={personInfoMock}
+            technologiesList={technologiesMock}
     />)
   });
 
@@ -122,12 +122,12 @@ describe('actions', () => {
 
   it('should handle ADD_TECHNOLOGY', () => {
     expect(rootReducer({technologiesList: []}, {
-          type: ADD_TECHNOLOGY,
-          payload: {
-            id: 1,
-            name: 'New Technology'
-          }
-        })
+              type: ADD_TECHNOLOGY,
+              payload: {
+                id: 1,
+                name: 'New Technology'
+              }
+            })
     ).toEqual({
       technologiesList: [{
         name: 'New Technology',
@@ -136,19 +136,19 @@ describe('actions', () => {
     });
 
     expect(rootReducer({
-          technologiesList: [{
-            name: 'Presented Technology',
-            id: 1,
-          }]
-        },
-        {
-          type: ADD_TECHNOLOGY,
-          payload: {
-            id: 2,
-            name: 'New Technology'
-          }
-        }
-        )
+              technologiesList: [{
+                name: 'Presented Technology',
+                id: 1,
+              }]
+            },
+            {
+              type: ADD_TECHNOLOGY,
+              payload: {
+                id: 2,
+                name: 'New Technology'
+              }
+            }
+            )
     ).toEqual({
       technologiesList: [
         {
@@ -165,34 +165,34 @@ describe('actions', () => {
 
   it('should handle DELETE_TECHNOLOGY', () => {
     expect(rootReducer({
-          technologiesList: [{
-            name: 'Presented Technology',
-            id: 1,
-          }]
-        }, {
-          type: DELETE_TECHNOLOGY,
-          payload: 1
-        })
+              technologiesList: [{
+                name: 'Presented Technology',
+                id: 1,
+              }]
+            }, {
+              type: DELETE_TECHNOLOGY,
+              payload: 1
+            })
     ).toEqual({
       technologiesList: []
     });
 
     expect(rootReducer({
-          technologiesList: [
-            {
-              name: 'Presented Technology',
-              id: 1,
+              technologiesList: [
+                {
+                  name: 'Presented Technology',
+                  id: 1,
+                },
+                {
+                  id: 2,
+                  name: 'New Technology'
+                }]
             },
             {
-              id: 2,
-              name: 'New Technology'
-            }]
-        },
-        {
-          type: DELETE_TECHNOLOGY,
-          payload: 2
-        }
-        )
+              type: DELETE_TECHNOLOGY,
+              payload: 2
+            }
+            )
     ).toEqual({
       technologiesList: [
         {
