@@ -5,7 +5,7 @@ import ContactsList from '../Contacts/ContactsList';
 import ContactProfile from '../Contacts/ContactProfile';
 import PostsList from '../Posts/PostsList';
 import PostById from '../Posts/PostById';
-import { Redirect, Route, Router, Switch, withRouter } from 'react-router';
+import { Redirect, Route, Switch } from 'react-router';
 import Notfound from '../common/NotFound/Notfound';
 
 class Routes extends Component {
@@ -37,4 +37,4 @@ class Routes extends Component {
   }
 }
 
-export default withRouter(Routes);
+export default Routes;
