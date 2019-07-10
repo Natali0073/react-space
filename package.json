@@ -9,6 +9,7 @@
     "@types/react-dom": "^16.0.11",
     "@types/react-router": "^4.4.3",
     "@types/react-router-dom": "^4.3.1",
+    "jest-transform-stub": "^2.0.0",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -20,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "npm install && react-scripts build",
-    "test": "jest",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "proxy": "http://127.0.0.1:3100",
@@ -55,24 +56,15 @@
     "ts-jest": "^24.0.2",
     "typescript": "^3.2.2"
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "setupFiles": [
-      "raf/polyfill"
-    ],
-    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$",
-    "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.ts"
-  },
   "babel": {
     "presets": [
-      "react-app"
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ],
+      "react"
     ]
   }
 }
