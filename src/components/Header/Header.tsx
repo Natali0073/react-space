@@ -34,7 +34,9 @@ class Header extends Component<RouteComponentProps, HeaderState> {
     }
    
     this.selectedTab = value;
-    this.props.history.push(route);
+    if (this.props) {
+      this.props.history.push(route);
+    }
   };
 
   handleAddContact = () => {
@@ -52,24 +54,26 @@ class Header extends Component<RouteComponentProps, HeaderState> {
   };
 
   render() {
-    switch (this.props.location.pathname) {
-      case '/':
-        this.selectedTab = 0;
-        break;
-      case '/home':
-        this.selectedTab = 0;
-        break;
-      case '/contacts':
-        this.selectedTab = 1;
-        break;
-      case '/posts':
-        this.selectedTab = 2;
-        break;
+    if (this.props) {
+      switch (this.props.location.pathname) {
+        case '/':
+          this.selectedTab = 0;
+          break;
+        case '/home':
+          this.selectedTab = 0;
+          break;
+        case '/contacts':
+          this.selectedTab = 1;
+          break;
+        case '/posts':
+          this.selectedTab = 2;
+          break;
 
-    }
+      }
 
-    if (['/login', '/not-found'].includes(this.props.location.pathname)) {
-      return null;
+      if (['/login', '/not-found'].includes(this.props.location.pathname)) {
+        return null;
+      }
     }
 
     return (
