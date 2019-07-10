@@ -1,8 +1,8 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import { postsList } from './mocked-data/posts-list';
-import { contactsList } from './mocked-data/contacts-list';
-import { homeData, technologiesListMock } from './mocked-data/home-data';
+import { postsList } from '../server/mocked-data/posts-list';
+import { contactsList } from '../server/mocked-data/contacts-list';
+import { homeData, technologiesListMock } from '../server/mocked-data/home-data';
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
