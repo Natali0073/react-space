@@ -93,7 +93,7 @@ app.get('/api/person-technologies', (req, res) => {
     res.send(technologiesListMock);
 });
 
-app.listen(listenPort, () => console.log('Example app listening on port 3100!'));
+app.listen(listenPort, () => console.log('Example app listening on port ' + listenPort));
 
 
 
