@@ -46,6 +46,7 @@
     "app-root-path": "^2.1.0",
     "express-pino-logger": "^4.0.0"
   },
+  "proxy": "https://radiant-river-46437.herokuapp.com",
   "scripts": {
     "start": "node ./server/server.js",
     "build": "react-scripts build",
@@ -55,7 +56,6 @@
     "dev": "run-p server start",
     "postinstall": "tsc"
   },
-  "proxy": "http://127.0.0.1:3100",
   "eslintConfig": {
     "extends": "react-app"
   },
