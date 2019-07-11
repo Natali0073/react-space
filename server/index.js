@@ -22,6 +22,8 @@ app.get('/api/posts', (req, res) => {
     res.send(postsList);
 });
 
+let listenPort = process.env.PORT || 3100;
+
 app.get('/api/posts/:id', (req, res) => {
     const matching = postsList.filter(t => t.id === +req.params.id)[0];
     if (matching) {
@@ -85,7 +87,7 @@ app.get('/api/person-technologies', (req, res) => {
     res.send(technologiesListMock);
 });
 
-app.listen(3100, () => console.log('Example app listening on port 3100!'));
+app.listen(listenPort, () => console.log('Example app listening on port 3100!'));
 
 
 
