@@ -12,10 +12,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const pino = require('express-pino-logger')();
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(pino);
 app.use(
     express.static(
         path.join(__dirname, '../build'),
