@@ -47,13 +47,11 @@
     "express-pino-logger": "^4.0.0"
   },
   "scripts": {
-    "start": "node ./server/server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "node-env-run server --exec nodemon | pino-colada",
-    "dev": "run-p server start",
-    "postinstall": "tsc"
+    "postinstall": "npm run build"
   },
   "proxy": "http://127.0.0.1:3100",
   "eslintConfig": {
