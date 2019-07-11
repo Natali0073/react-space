@@ -66,32 +66,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-react": "^7.0.0",
-    "@types/jest": "^24.0.15",
-    "@types/react-redux": "^7.0.0",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-jest": "23.6.0",
-    "body-parser": "^1.19.0",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.8.0",
-    "enzyme-to-json": "^3.3.5",
-    "express": "^4.17.1",
-    "fetch-mock": "^7.3.0",
-    "jest": "^23.6.0",
-    "moxios": "^0.4.0",
-    "node-env-run": "^3.0.2",
-    "nodemon": "^1.19.1",
-    "npm-run-all": "^4.1.5",
-    "pino-colada": "^1.4.5",
-    "react-redux": "^6.0.0",
-    "react-test-renderer": "^16.7.0",
-    "redux": "^4.0.1",
-    "redux-mock-store": "^1.5.3",
-    "redux-thunk": "^2.3.0",
-    "source-map-loader": "^0.2.4",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.2.2"
   },
   "babel": {
     "presets": [
