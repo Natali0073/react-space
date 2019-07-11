@@ -13,6 +13,8 @@ app.get('/api/posts', (req, res) => {
     res.send(postsList);
 });
 
+app.use(express.static(path.join(__dirname, 'build')));
+
 let listenPort = process.env.PORT || 3100;
 
 app.get('/api/posts/:id', (req, res) => {
