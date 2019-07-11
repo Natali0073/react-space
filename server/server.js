@@ -1,13 +1,3 @@
-// import * as express from 'express';
-// import * as bodyParser from 'body-parser';
-// import { postsList } from './mocked-data/posts-list';
-// import { contactsList } from './mocked-data/contacts-list';
-// import { homeData, technologiesListMock } from './mocked-data/home-data';
-
-// const postsList = require("./mocked-data/posts-list");
-// const contactsList = require("./mocked-data/contacts-list");
-// const homeData = require("./mocked-data/home-data");
-// const technologiesListMock = require("./mocked-data/home-data");
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -18,20 +8,12 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(pino);
-app.use(
-    express.static(
-        path.join(__dirname, '../build'),
-        { index: false },
-    ),
-);
 
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../build/index.html'), function(err) {
-        if (err) {
-            res.status(500).send(err)
-        }
-    })
-})
+app.use(express.static(__dirname));
+
+app.get("/*", function(req, res) {
+    res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 app.get('/api/posts', (req, res) => {
     res.send(postsList);
