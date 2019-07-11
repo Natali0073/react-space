@@ -80,6 +80,10 @@ app.get('/api/person-technologies', (req, res) => {
     res.send(technologiesListMock);
 });
 
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 app.listen(listenPort, () => console.log('Example app listening on port ' + listenPort));
 
 
