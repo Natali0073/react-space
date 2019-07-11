@@ -58,6 +58,7 @@ export class Home extends Component<HomeProps, HomeState> {
           <Spinner/>
       )
     }
+    console.log(personInfo);
 
     return (
         <div className="home-container">

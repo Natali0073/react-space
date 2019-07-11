@@ -9,20 +9,20 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(pino);
 
-app.use(
-    express.static(
-        path.join(__dirname, '../build'),
-        { index: false },
-    ),
-);
-
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../build/index.html'), function(err) {
-        if (err) {
-            res.status(500).send(err)
-        }
-    })
-})
+// app.use(
+//     express.static(
+//         path.join(__dirname, '../build'),
+//         { index: false },
+//     ),
+// );
+//
+// app.get('/*', function(req, res) {
+//     res.sendFile(path.join(__dirname, '../build/index.html'), function(err) {
+//         if (err) {
+//             res.status(500).send(err)
+//         }
+//     })
+// })
 
 app.get('/api/posts', (req, res) => {
     res.send(postsList);
@@ -74,7 +74,7 @@ app.post('/api/contacts', (req, res) => {
 });
 
 app.get('/api/person-info', (req, res) => {
-    res.send(homeData);
+    res.send(JSON.stringify(homeData));
 });
 
 app.post('/api/person-technologies', (req, res) => {
