@@ -57,7 +57,7 @@ describe('actions', () => {
 
   it('should call the mock add technology function', () => {
     component.find('#add-tech-button').simulate('click');
-    expect(addTechnologyMock.mock.calls.length).toBe(50);
+    expect(addTechnologyMock.mock.calls.length).toBe(1);
   });
 
   it('should create an action to add a technology', () => {
