@@ -77,9 +77,5 @@
   },
   "engines": {
     "node": "10.5.0"
-  },
-  "jest": {
-    "verbose": true,
-    "transformIgnorePatterns": ["/node_modules/"]
   }
 }
