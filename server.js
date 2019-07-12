@@ -81,7 +81,7 @@ app.get('/api/person-technologies', (req, res) => {
 });
 
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(listenPort, () => console.log('Example app listening on port ' + listenPort));
