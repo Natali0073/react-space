@@ -89,7 +89,7 @@ class Header extends Component<RouteComponentProps, HeaderState> {
                     onChange={this.handleChangeRouting}
                     showLabels={true}>
                   <BottomNavigationAction
-                      label="Home 2"
+                      label="Home"
                       icon={<Home/>}/>
                   <BottomNavigationAction
                       label="Contacts"
